@@ -1,0 +1,71 @@
+{% extends 'base.html' %}
+
+{% load static %}
+{% block content %}
+
+
+
+<div id="container">
+  <div id="wrapper">
+
+    <div id="sidebar">
+      <h2>This is 'The Old Forest'. A CSS/XHTML template created for the OWD contest and based on the book "The Fellowship of the Ring" by J.R.R. Tolkien.</h2>
+      <ul id="sidenav">
+        <li><a href="#" accesskey="h"><em>H</em>ome</a></li>
+        <li><a href="#" accesskey="a"><em>A</em>bout</a></li>
+        <li><a href="#" accesskey="e"><em>E</em>xamples</a></li>
+        <li><a href="#" accesskey="c"><em>C</em>ontact</a></li>
+      </ul>
+      <p> Here's an example sidebar paragraph. You might put notes here, or latest news items etc. This is filler text: dsnf jdsnf ljksdnaf kjsnf jksnf ljksa nkjsfn lsdaj fnlsnka fjdasnf lkasnfd sauifn esaufn sdjn kjfndsalkfjn sdkjf ndslfn dsljfn dslakfn d </p>
+      <input value="Search..." type="text" />
+    </div>
+    <div id="content">
+      <ul id="nav">
+        <li class="hidden"><strong>Main Navigation</strong></li>
+        <li><a href="#intro" accesskey="h"><em>H</em>ome</a></li>
+        <li><a href="#" accesskey="a"><em>A</em>bout</a></li>
+        <li><a href="#" accesskey="e"><em>E</em>xamples</a></li>
+        <li><a href="#" accesskey="c"><em>C</em>ontact</a></li>
+      </ul>
+      <div id="content_main">
+        {% for post in posts %}
+        <h2><a href="#" id="intro">{{ post.title }}</a></h2>
+        <p class="details"> <a href="#"class="comlink">25 Comments</a>Posted by <a href="#">{{ post.author.user.username }} |</a><a href="#">       {{ post.date|timesince }} ago</a> </p>
+        <p>{{ post.content }}</p>
+        {% endfor %}
+
+
+        <h3>Comments</h3>
+        <ol class="comments">
+
+          <li class="alt">
+            <div class="user">
+              <p><a href="#">User Name</a><br />
+                <img src="images/avatar.gif" alt="avatar" /></p>
+            </div>
+            <div class="etc">
+              <p>Posted on 01.01.01.<br />
+                <a href="#header">Top</a></p>
+            </div>
+            <p> Comment text here jndfl jsndjaf ndsfn aeufn uisf shelf jsae hej hfliusl huifehsu adlhfjeshflsdl hfaisehfj sdhfljk ashdfjk dshlfajdsjah fjsdlhf sdjahf lsdaf ljsdahf jksahdf hadsfjksdha fjsdhafjkshdafjkshdafjds </p>
+          </li>
+         
+        </ol>
+        <h2><a href="#" id="contact">Contact</a></h2>
+        <p class="details"> <a href="#"class="comlink">25 Comments</a>Posted by <a href="#">User Name</a> on <a href="#">01.01.01.</a> </p>
+        <p> If you decide to use this template please drop me a line to let me know! Don't hesitiate to get in touch if your interested in a custom template or just in any of my services in general. I look forward to hearing from you! </p>
+      </div>
+      
+    </div>
+  </div>
+</div>
+{% endblock content %}
+
+
+
+
+
+
+
+
+
