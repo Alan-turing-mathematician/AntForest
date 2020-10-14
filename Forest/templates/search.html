@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% load static %}
+{% block content %}
+
+
+{% for post in posts %}
+        <h2><a href="{{ post.get_absolute_url }}" id="intro" class='title'>{{ post.title }}</a>
+        
+        </h2>
+        <p class="details"> <a href="#"class="comlink"></a>Posted by <a href="{{ post.author.get_absolute_url }}">{{ post.author.user.username }} |</a><a href="#">       {{ post.date|timesince }} ago</a> {% if post.author == user.profile %}
+          <a href="{{ post.get_absolute_url2 }}" id="intro" class='title'>  update</a>
+          <a href="{{ post.get_absolute_url3 }}" id="intro" class='title'>  delete</a>
+        {% endif %}</p>
+        
+        <a href='{{ post.get_absolute_url }}' class='content'><p>{{ post.content }}</p></a>
+
+        
+        
+        {% endfor %}
+
+
+{% endblock content %}

@@ -1,0 +1,38 @@
+{% load crispy_forms_tags %}
+{% load static %}
+
+
+    <div id="sidebar">
+      <h2>This is Ants!</h2>
+      <ul id="sidenav">
+        <li><a href="{% url 'home' %}" accesskey="h"><em>H</em>ome</a></li>
+        {% if user.is_authenticated %}
+        <li><a href="{{ profile.get_absolute_url2 }}" accesskey="a"><em>Pro</em>file</a></li>
+        <li><a href="{% url 'create' %}" accesskey="e"><em>Add</em> Post</a></li>
+        {% endif %}
+        <li><a href="{% url 'login' %}" accesskey="e">Log In</a></li>
+        <li><a href="{% url 'logout' %}" accesskey="e">Log Out</a></li>
+        <li><a href="{% url 'register' %}" accesskey="e">Sign Up</a></li>
+      </ul>
+      <p> </p>
+      <form action="{% url 'search' %}"> 
+        {% csrf_token %}
+        <input placeholder="Search..." type="text" name='q'/> 
+        <br>
+        <input type="submit" value="search" class='bt'/>
+      </form>
+    </div>
+
+
+      <div id="content">
+      <ul id="nav">
+        <li class="hidden"><strong>Main Navigation</strong></li>
+        <li><a href="{% url 'home' %}" accesskey="h">Home</a></li>
+        {% if user.is_authenticated %}
+        <li><a href="{{ profile.get_absolute_url2 }}" accesskey="a">Profile</a></li>
+        <li><a href="{% url 'create' %}" accesskey="e">Add Post</a></li>
+        {% endif %}
+        <li><a href="{% url 'login' %}" accesskey="e">Log In</a></li>
+        <li><a href="{% url 'logout' %}" accesskey="e">Log Out</a></li>
+        <li><a href="{% url 'register' %}" accesskey="e">Sign Up</a></li>
+      </ul>

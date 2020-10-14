@@ -9,9 +9,11 @@ from django.urls import include
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', home_page, name='home'),
-    path('register/', RegisterPage.as_view(template_name='register.html'), name='register'),
-    path('login/', AuthViews.LoginView.as_view(template_name='login.html'), name='login'),
-    path('logout/', AuthViews.LogoutView.as_view(template_name='logout.html'), name='logout'),
     path('create/', PostCreatePage.as_view(template_name='create.html'), name='create'),
-    path('accounts/', include('allauth.urls')),
+    path('update/<int:pk>/', PostUpdatePage.as_view(template_name='update.html'), name='update'),
+    path('delete/<int:pk>/', PostDeletePage.as_view(template_name='delete.html'), name='delete'),
+    path('post/<id>/', post_single, name='post'),
+    path('author/<id>/', post_author, name='author'),
+    path('search/', search, name='search'),
+    path('like/<int:pk>/', likes, name='likes'),
 ]

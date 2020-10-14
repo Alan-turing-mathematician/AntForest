@@ -1,3 +1,40 @@
+.content{
+    color: #646F5E;
+
+
+}
+
+.btn{
+    text-align: center;
+}
+
+.v{
+    display: block;
+  	margin-left: auto;
+  	margin-right: auto;
+  	width: 50%;
+}
+
+}
+
+.content{
+   color: #646F5E;        
+}
+
+.title{
+    color: #D6DBC1;
+    text-decoration: none;
+    background: none;
+    text-align: center;
+ }
+
+.name {
+	text-align: center;
+}
+
+
+
+
 body {
 	/*font: 76.5%/1.6em "Lucida Grande", "Lucida Sans Unicode", verdana, geneva, sans-serif;*/
 	font:76% Georgia;
@@ -39,6 +76,13 @@ blockquote {
 	margin:0 auto;
 }
 
+#container2 {
+	width:780px;
+	background:url(../images/GREEN.jpg) repeat;
+	margin:0 auto;
+}
+
+
 #wrapper {
 	width:740px;
 	margin:0 auto;
@@ -47,6 +91,8 @@ blockquote {
 #header {
 	height:233px;
 	background:url(../images/header.jpg) no-repeat;
+	background-position: center;
+
 }
 
 #header h1 {
@@ -123,7 +169,7 @@ blockquote {
 	background:#A39783;
 	color:#3D3725;
 	padding:4px;
-	width:250px;
+	margin-bottom: 5px;
 	border:none;
 	font:140% Trebuchet MS;
 }
@@ -165,7 +211,7 @@ a em {
 #content_main {
 	margin:18px 0 0 0;
 	padding:5px 15px 15px 15px;
-	background:url(../images/content_sub.jpg) top left no-repeat;
+	
 }
 
 a {

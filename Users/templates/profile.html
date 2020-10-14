@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+
+{% load crispy_forms_tags %}
+{% load static %}
+{% block content %}
+
+
+<h2 class='name'><a href="#" id="">{{ profile.user.username }}</a></h2>
+        
+    <p class="details"><a href="#">{{ post.author.user.username }} </a></p>
+    {% if profile.avatar %}
+     <div class="user">
+        <p><a href="#"></a><br />
+        <img src="{{ profile.avatar.url }}" alt="..." width=30% /></p>
+     </div>
+     {% endif %}
+
+<style type="text/css">
+	
+	.name {
+		text-align: center;
+	}
+
+	img {
+		display: block;
+  		margin-left: auto;
+  		margin-right: auto;
+  		width: 50%;
+	}
+
+	.prof {
+		text-align: center;
+	}
+
+</style>
+
+<form method="POST" enctype="multipart/form-data", class='prof'>
+          {% csrf_token %}
+         <fieldset class="form-group">
+        <div class="media-body">
+              <legend class="border-bottom mb-4">Profile Info</legend>
+              {{ form|crispy }}
+              {{ form2|crispy }}
+              <br>
+              <button class="btn btn-outline-info" type="submit">Update</button>
+              
+          </fieldset>
+          <div class="form-group">
+              
+          </div>
+      </form>
+
+
+        
+
+
+{% endblock content %}

@@ -1,8 +1,67 @@
 {% extends 'base.html' %}
 
+{% load crispy_forms_tags %}
 {% load static %}
 {% block content %}
 
+
+
+
+<div id="container2">
+
+  <div id="wrapper">  
+    <div id="content_main">
+
+      
+     {% if post.thumbnail %} 
+
+          <img class='' src="{{ post.thumbnail.url }}" width="40%">
+   
+        {% endif %}
+        
+        
+        <h2><a href="{{ post.get_absolute_url }}" id="intro">{{ post.title }}</a></h2>
+           
+        <p class="details"> <a href="#"class="comlink"></a>Posted by <a href="{{ post.author.get_absolute_url }}">{{ post.author.user.username }} |</a><a href="#">       {{ post.date|timesince }} ago</a> 
+        {% if post.author == user.profile %}
+        <a href="{{ post.get_absolute_url2 }}"  class='title'>  update</a>
+        <a href="{{ post.get_absolute_url3 }}"  class='title'>  delete</a>
+        {% endif %}</p></p>
+        
+        <a href='{{ post.get_absolute_url }}' class='content'><p>{{ post.content }}</p> </a>
+
+        {% if user.is_authenticated %}
+        <form method='POST' action="{% url 'likes' post.pk %}"> 
+          {% csrf_token %}
+          {% if liked %}
+            <button type='submit' name='post_id' value='{{ post.id }}' class='like'>Unlike | {{ post.count_likes }} likes</button>
+          {% else %}
+            <button type='submit' name='post_id' value='{{ post.id }}' class='like'>Like | {{ post.count_likes }} likes</button> 
+        
+          {% endif %}
+        </form>
+        {% endif %}
+        
+      </div>
+      
+    </div>
+  </div>
+
+
+
+        
+
+<style type="text/css">
+	.c {
+		text-align: center;
+	}
+
+	.form {
+		text-align: center;
+	}
+
+
+</style>
 
 
 

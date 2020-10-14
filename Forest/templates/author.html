@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% load static %}
+{% block content %}
+
+<br>
+<div class='name'>
+<h1><a href="#" >{{ profile.user.username }}</a></h1>
+        
+    <p class="details"><a href="#">{{ post.author.user.username }} </a></p>
+    {% if profile.avatar %}
+     <div class="user">
+        <p><a href="#"></a><br />
+        <img src="{{ profile.avatar.url }}" alt="..." width=30% /></p>
+     </div>
+     {% endif %}
+     <h2>User Posts</h2>
+     {% for post in profile.get_posts %}
+     <h3><a href='{{ post.get_absolute_url }}'>{{ post.title }}</a></h3>
+     <br>
+     {% endfor %}
+
+</div>
+
+
+{% endblock content %}
