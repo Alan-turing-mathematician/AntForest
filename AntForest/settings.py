@@ -81,7 +81,7 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'ant',
-        'USER': 'ded',
+        'USER': 'clay',
         'PASSWORD': 'starwars2026',
         'HOST': 'localhost',
         'PORT': '',
@@ -133,4 +133,4 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static_root')
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 LOGIN_REDIRECT_URL = 'home'
-ALLOWED_HOSTS = ['165.227.131.93']
+ALLOWED_HOSTS = ['159.65.124.152']
